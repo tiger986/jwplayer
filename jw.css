@@ -1,0 +1,6 @@
+/*#myplayer_controlbar{
+	display: none!important;
+}*/
+/*此代码是为了做了模拟控制条后,将插件自带的控制条隐藏(如果直接在setup中设置controls:false,
+则视频正中间的播放按钮也会被隐藏且点击视频区将不会再起到播放和暂停的效果)
+注意:#myplayer_controlbar,这个ID名是根据你定义视频容器时的id来的(<div id='myplayer'></div> )*/
