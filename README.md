@@ -18,36 +18,36 @@ var thePlayer;
 thePlayer = jwplayer('myplayer').setup({
     file: 'aa.mp4',
     //file: '难念的经+_周华健.mp3',
-	 	image: '11.jpg',
-	 	width: '800',          
-	 	height: '480', 
-	 	dock: true,  
-	 	repeat: false,//重复播放
-	 	autostart: false,//自动播放
+    image: '11.jpg',
+    width: '800',          
+    height: '480', 
+    dock: true,  
+    repeat: false,//重复播放
+    autostart: false,//自动播放
     controls:true,//显示控件按钮
     type: "mp4",
     //type: "mp3",
     events:{
-		    onComplete: function(){ console.log("播放结束!!!");},		
-		    onVolume: function(){ console.log("声音大小改变!!!"); },		
-		    onReady: function(){ console.log("准备就绪!!!"); },		
-		    onPlay: function(){ console.log("开始播放!!!"); $('.player-play').val("暂停");},		
-		    onPause: function(){ console.log("暂停!!!"); $('.player-play').val("播放")},
-		    onTime: function () {console.log("播放监听!!!"); /*console.log(thePlayer.getPosition());*/},
-			onBufferChange: function(){ console.log("缓冲改变!!!"); /*console.log(thePlayer.getDuration());*/},
-			onBufferFull: function(){ console.log("视频缓冲完成!!!");},
- 		}
+        onComplete: function(){ console.log("播放结束!!!");},		
+	onVolume: function(){ console.log("声音大小改变!!!"); },		
+	onReady: function(){ console.log("准备就绪!!!"); },		
+	onPlay: function(){ console.log("开始播放!!!"); $('.player-play').val("暂停");},		
+	onPause: function(){ console.log("暂停!!!"); $('.player-play').val("播放")},
+	onTime: function () {console.log("播放监听!!!"); /*console.log(thePlayer.getPosition());*/},
+        onBufferChange: function(){ console.log("缓冲改变!!!"); /*console.log(thePlayer.getDuration());*/},
+	onBufferFull: function(){ console.log("视频缓冲完成!!!");},
+     }
 });
   
 //播放 暂停 
 $('.player-play').click(function(){  
     if(thePlayer.getState() != 'PLAYING'){  
-	      thePlayer.play(true);  
-	      this.value = '暂停'; 
-	  }else {  
-	      thePlayer.play(false);  
-	      this.value = '播放';  
-	  }  
+	thePlayer.play(true);  
+        this.value = '暂停'; 
+    }else {  
+	thePlayer.play(false);  
+	this.value = '播放';  
+    }  
 }); 
 	
 //跳转到指定位置播放  (需在web服务器上)
@@ -85,7 +85,7 @@ $('.player-status').click(function() {
         case 'IDLE':  
             msg = '停止';  
             break;  
-        }  
+    }  
     console.log(msg);  
 }); 
     
@@ -95,7 +95,7 @@ $('.player-mute').click(function() {
     if(thePlayer.getMute()){
         thePlayer.setMute(false);
     }else{
-    		thePlayer.setMute(true);
+    	thePlayer.setMute(true);
     }
 });
     
@@ -112,9 +112,9 @@ $('.player-size').click(function() {
 //是否全屏
 $('.player-full').click(function() {
     if(thePlayer.getFullscreen()){
-    		thePlayer.setFullscreen(false);
+    	thePlayer.setFullscreen(false);
     }else{
-    		thePlayer.setFullscreen(true);
+    	thePlayer.setFullscreen(true);
     }    		
 });
     
